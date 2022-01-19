@@ -1,8 +1,8 @@
 # Spacetagram
-A gallery of images from NASA's Astronomy Picture of the Day API, for the Shopify S22 Front-End Internship Challenge.\
+A gallery of images from NASA's Astronomy Picture of the Day API for the Shopify S22 Front-End Internship Challenge.\
 Contains features including loading/error messages, as well as options to like photos and get a shareable link.\
-Built using React, with UI components from Material UI.
-
+Built using React, with UI components from Material UI.\
+Try it out at: https://pzhang24.github.io/Spacetagram/
 
 
 # Getting Started with Create React App
