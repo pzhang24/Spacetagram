@@ -5,7 +5,39 @@ import { Favorite, FavoriteBorder, Link } from "@mui/icons-material";
 const GalleryCard = ({ image, toggleLikeStatus }) => {
   const [copyLinkClicked, setCopyLinkClicked] = useState(false);
 
-  const LikeButton = image.liked ? <Favorite /> : <FavoriteBorder />;
+  const LikeButton = image.liked ? (
+    <IconButton
+      variant="outlined"
+      onClick={() => toggleLikeStatus(image)}
+      color="secondary"
+      aria-label="Unlike Photo"
+    >
+      <Favorite />
+    </IconButton>
+  ) : (
+    <IconButton
+      variant="outlined"
+      onClick={() => toggleLikeStatus(image)}
+      color="secondary"
+      aria-label="Like Photo"
+    >
+      <FavoriteBorder />
+    </IconButton>
+  );
+
+  const CopyLinkButton = (
+    <IconButton
+      variant="outlined"
+      onClick={() => {
+        navigator.clipboard.writeText(image.url);
+        setCopyLinkClicked(true);
+        setTimeout(() => setCopyLinkClicked(false), 2000);
+      }}
+      aria-label="Copy Photo Link"
+    >
+      <Link />
+    </IconButton>
+  );
 
   return (
     <Card variant="elevation" sx={{ display: "flex", flexDirection: "column" }}>
@@ -29,23 +61,8 @@ const GalleryCard = ({ image, toggleLikeStatus }) => {
           }}
           mt={2}
         >
-          <IconButton
-            variant="outlined"
-            onClick={() => toggleLikeStatus(image)}
-            color="secondary"
-          >
-            {LikeButton}
-          </IconButton>
-          <IconButton
-            variant="outlined"
-            onClick={() => {
-              navigator.clipboard.writeText(image.url);
-              setCopyLinkClicked(true);
-              setTimeout(() => setCopyLinkClicked(false), 2000);
-            }}
-          >
-            <Link />
-          </IconButton>
+          {LikeButton}
+          {CopyLinkButton}
           {copyLinkClicked && (
             <Typography color="secondary.dark">Link Copied!</Typography>
           )}
