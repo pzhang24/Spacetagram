@@ -1,3 +1,10 @@
+# Spacetagram
+A gallery of images from NASA's Astronomy Picture of the Day API, for the Shopify S22 Front-End Internship Challenge.\
+Contains features including loading/error messages, as well as options to like photos and get a shareable link.\
+Built using React, with UI components from Material UI.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,4 +75,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Spacetagram
+
